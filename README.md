@@ -17,7 +17,7 @@ Set DispacthClass at /phoneapp/api csp application
 - Use POSTMAN or similar to send the HTTP requests
 
 ``` 
-GET http://localhost:57774/phoneapp/api/phones					<-- Test the phoneapp API
-GET http://localhost:57774/api/mgmnt/ 							<-- Discover the existing APIS
+GET http://localhost:57774/phoneapp/api/phones                  <-- Test the phoneapp API
+GET http://localhost:57774/api/mgmnt/                           <-- Discover the existing APIS
 GET http://localhost:57774/api/mgmnt/v1/DEMO/spec/phoneapp/api	<-- Get the Swagger Spec for API
 ```
