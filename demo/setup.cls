@@ -7,7 +7,6 @@ ClassMethod setup(nsp As %String = "USER", webapp As %String = "/phoneapp")
 	Do ##class(demo.phones.phone).CreateData()
 }
 
-
 ClassMethod createCspPhoneappApi(nsp As %String = "USER", webapp As %String = "/phoneapp") [ Private ]
 {
 	Set oldNS = $namespace
@@ -16,8 +15,10 @@ ClassMethod createCspPhoneappApi(nsp As %String = "USER", webapp As %String = "/
 	Set app.Name = webapp_"/api"
 	Set app.NameSpace = nsp
 	Set app.DispatchClass = "demo.phones.restserver"
+	set MatchRole = ":%ALL"
+    do app.MatchRoles.Insert(MatchRole)
 	Set sc = app.%Save()
-	
+
 	Set $namespace = oldNS
 	Quit ''sc
 }
@@ -31,4 +32,3 @@ ClassMethod reset(webapp As %String = "/phoneapp")
 }
 
 }
-

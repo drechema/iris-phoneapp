@@ -1,15 +1,6 @@
 Class demo.phones.phone Extends %Persistent
 {
 
-/// this class holds phone data for demo phonemarketapp AngularJS application (WITS2016)
-/// 
-/// Invoke:
-/// do ##class(demo.phones.phone).CreateData()
-/// to import phone data *after* you have completed prerequisites described in 
-/// demo.phones.reserver class.
-/// Then run app in browser: http://localhost:<port>/phoneapp/index.html
-/// Enjoy! :)
-/// 
 Property manufacturer As %String;
 
 Property model As %String;
@@ -34,8 +25,7 @@ Property img As %String(MAXLEN = 256);
 
 Property price As %String;
 
-Property phoneID As %Integer [ Calculated, SqlComputeCode = {Set {*} = {ID} 
-}, SqlComputed ];
+Property phoneID As %Integer [ Calculated, SqlComputeCode = { Set {*} = {ID} }, SqlComputed ];
 
 ClassMethod DummyData() As %DynamicArray [ Private ]
 {
@@ -253,9 +243,6 @@ ClassMethod DummyData() As %DynamicArray [ Private ]
 	]
 }
 
-// Comentario
-/// Esto va a la doc
-/// do ##class(demo.phones.phone).CreateData()
 ClassMethod CreateData()
 {
 	Set response = ..DummyData()
@@ -397,4 +384,3 @@ Storage Default
 }
 
 }
-
